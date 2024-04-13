@@ -7,7 +7,7 @@ import SignupComponent from './components/SignupComponent'
 import HomeLayout from './layouts/HomeLayout'
 import PaymentSuccess from './components/PaymentSuccess'
 import PaymentFailure from './components/PaymentFailure'
-import ReactGA from 'react-ga'
+import ReactGA from 'react-ga4'
 
 const TRACKING_ID = "G-642VPS6TWC"
 ReactGA.initialize(TRACKING_ID)
