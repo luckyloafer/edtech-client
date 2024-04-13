@@ -15,8 +15,10 @@ const LoginComponent = () => {
       let res = await LoginAPI(credentails.email, credentails.password)
       console.log(res)
       localStorage.setItem('userEmail', res.user.email)
-      ReactGA.event(user,{
-        user:credentails.email
+      ReactGA.event({
+        category: "userLogin",
+  action: "Logged in",
+  label: "userLogged", // optional
       })
       navigate('/home')
     } catch (error) {
