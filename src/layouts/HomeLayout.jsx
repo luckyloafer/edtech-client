@@ -17,7 +17,8 @@ const HomeLayout = () => {
 
     <div>
       
-      <Home currentUser={currentUser}/>
+      {/* <Home currentUser={currentUser}/> */}
+      <h1 style={{color:'blue'}}>home layout</h1>
     </div>
   )
 }
