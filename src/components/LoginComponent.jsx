@@ -1,6 +1,7 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { LoginAPI } from '../api/AuthAPI'
 import { Link, useNavigate } from 'react-router-dom'
+import ReactGA from 'react-ga'
 // import { BiSolidUser } from "react-icons/bi";
 
 const LoginComponent = () => {
@@ -14,6 +15,9 @@ const LoginComponent = () => {
       let res = await LoginAPI(credentails.email, credentails.password)
       console.log(res)
       localStorage.setItem('userEmail', res.user.email)
+      ReactGA.event({
+        user:credentails.email
+      })
       navigate('/home')
     } catch (error) {
       alert('Invalid credentials')
@@ -21,8 +25,13 @@ const LoginComponent = () => {
       console.log(error)
 
     }
-
   }
+
+  useEffect(()=>{
+
+    ReactGA.pageview(window.location.pathname)
+
+  },[])
   return (
     <div>
       <div className='bg-gradient-to-b from-black via-gray-900 to-black bg-slate-800 border border-slate-400 rounded-md p-8 shadow-lg backdrop-filter backdrop-blur-sm bg-opacity-30 relative'>
