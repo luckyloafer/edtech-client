@@ -7,23 +7,23 @@ import PaymentFailure from "../components/PaymentFailure";
 
 export const router = createBrowserRouter([
     {
-      path: "/",
-      element: <Login/>,
+        path: "/",
+        element: <Login />,
     },
     {
-       path:"/signup",
-       element: <SignupComponent/>
+        path: "/signup",
+        element: <SignupComponent />
     },
     {
-      path:"/home",
-      element: <HomeLayout/>
-   },
-   {
-    path:"/paymentSuccess",
-    element: <PaymentSuccess/>
- },
- {
-   path:"/paymentFailure",
-   element: <PaymentFailure/>
-}
-  ]);
+        path: "/home",
+        element: <HomeLayout />
+    },
+    {
+        path: "/paymentSuccess",
+        element: <PaymentSuccess />
+    },
+    {
+        path: "/paymentFailure",
+        element: <PaymentFailure />
+    }
+]);
