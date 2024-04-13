@@ -10,9 +10,11 @@ const Home = ({currentUser}) => {
    const navigate = useNavigate();
 
    const [loading,setLoading] = useState(true);
+   console.log('home')
+    console.log(currentUser)
 
   useEffect(()=>{
-
+    
     onAuthStateChanged(auth, res=>{
       if(!res?.accessToken){
         navigate('/')

@@ -27,9 +27,11 @@ const carts = [
 
 const secretKey = import.meta.env.VITE_REACT_APP_publishStripekey;
 
-const HomeComponent = () => {
+const HomeComponent = ({currentUser}) => {
 
   const [cartItems, setCartItems] = useState([]);
+  console.log('homeComponet')
+    console.log(currentUser)
 
   const makePayment = async () => {
     const stripe = await loadStripe(secretKey)
@@ -66,8 +68,8 @@ const HomeComponent = () => {
     // }
   }
 
-  console.log(carts)
-  console.log(cartItems)
+  // console.log(carts)
+  // console.log(cartItems)
   return (
     <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
 

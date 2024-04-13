@@ -8,9 +8,11 @@ const HomeLayout = () => {
 
   const [currentUser, setCurrentUser] = useState({})
 
-  useMemo(()=>{
-    getCurrentUser(setCurrentUser)
+  useMemo(async()=>{
+    await getCurrentUser(setCurrentUser)
+    
   },[])
+  console.log(currentUser)
   return (
 
     <div>

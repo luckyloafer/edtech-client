@@ -70,9 +70,10 @@ export const postUserData = (object) => {
         })
 }
 
-export const getCurrentUser = (setCurrentUser) => {
+export const getCurrentUser =async (setCurrentUser) => {
 
     let currEmail = localStorage.getItem('userEmail')
+    console.log('get current user api hitted')
     onSnapshot(userRef, (response) => {
         setCurrentUser(response.docs.map((docs) => {
             return { ...docs.data(), userID: docs.id }
