@@ -9,7 +9,8 @@ import PaymentSuccess from './components/PaymentSuccess'
 import PaymentFailure from './components/PaymentFailure'
 import ReactGA from 'react-ga4'
 
-const TRACKING_ID = "G-642VPS6TWC"
+const TRACKING_ID = import.meta.env.VITE_REACT_APP_TRACKING_ID;
+
 ReactGA.initialize(TRACKING_ID)
 
 const App = () => {
