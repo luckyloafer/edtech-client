@@ -8,7 +8,7 @@ const PaymentSuccess = () => {
   return (
     <div style={{ position:'relative',display: 'flex', padding: 20, flexDirection: 'column', alignItems: 'center', gap: 20 }}>
     <div style={{position:'absolute'}}>
-      <h1 className='text-[30px] font-bold'>Payment Successfully handled</h1>
+      <h1 className='text-[25px] font-bold'>Payment Successfully handled</h1>
     </div>
       <Player
         src='https://lottie.host/9a1bd5c5-21c3-4092-a080-5e5e8e53e5a5/Df7WcGOQoV.json'
