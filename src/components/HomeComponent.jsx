@@ -3,6 +3,7 @@
 import React, { useState } from 'react'
 import { onLogout } from '../api/AuthAPI'
 import { loadStripe } from '@stripe/stripe-js'
+import ReactGA from 'react-ga4'
 // import axios from 'axios'
 
 const carts = [
@@ -41,6 +42,12 @@ const HomeComponent = ({currentUser}) => {
     const headers = {
       "Content-Type": 'application/json'
     }
+
+    ReactGA.event({
+      category: "Payment",
+action: "Open payment gateway",
+label: "Opened payment", // optional
+    })
     // https://edtech-server-jxfo.onrender.com/create-checkout-session
     const response = await fetch('https://edtech-server-taot.onrender.com/create-checkout-session', {
       method: 'POST',
